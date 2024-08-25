@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "axios": "^1.6.8",
+    "big-integer": "^1.6.52",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.17.1",
+    "express-jwt": "^8.4.1",
+    "fs": "^0.0.1-security",
+    "install": "^0.13.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.14",
+    "openai": "^4.40.2",
+    "python-shell": "^5.0.0",
+    "redis": "^3.1.2",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.5",
+    "socks-proxy-agent": "^8.0.3",
+    "uuid": "^10.0.0",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.8",
+    "@types/ws": "^8.5.10",
+    "gulp": "^4.0.2"
+  },
+  "name": "nodejstest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

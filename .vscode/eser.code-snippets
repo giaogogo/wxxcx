@@ -1,0 +1,16 @@
+
+{
+    "express snippets": {
+        "scope": "typescript",
+        "prefix": "eser",
+        "body": [
+            "const express = require('express');",
+			"",
+            "const app = express();",
+			"",
+            "app.listen(80, () => {"
+            "\tconsole.log('Express server running at http:127.0.0.1:3001');"
+            "})"
+        ]
+    }
+}
