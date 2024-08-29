@@ -38,6 +38,21 @@ export class XCXSQLCOL{
         });
       }
 
+    changetype_network_maintenance(data:any,res:any)
+    {
+        let str="update wxxcx.xcx_network_maintenance_table set type='repair' where truename=?"
+        this.db.query(str,[data.truename],(err:any,results:any)=>{
+            if(err)
+            {
+                res.send({success:false,reason:"changetype_err"})
+            }
+            else
+            {
+                res.send({success:true,reason:"",results:results})
+            }
+        })
+    }
+    
     insert_network_maintenance(data:any,res:any)
     {
         let str='insert into xcx_network_maintenance_table (username,truename,phonenumber,housenumber,type) values (?,?,?,?,?)';
