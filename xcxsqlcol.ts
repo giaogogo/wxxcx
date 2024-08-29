@@ -18,6 +18,26 @@ export class XCXSQLCOL{
         return XCXSQLCOL.instance;
     }
 
+    query_network_maintenance(data: any, res: any) {
+        let str = "select * from xcx_network_maintenance_table where type=?";
+        this.db.query(str, [data.type], (err: any, results: any) => {
+          if (err) {
+            console.log(err);
+            res.send({ success: false, reason: "query_sql_err" });
+          }
+          if (results.length > 0) {
+            console.log("found records", results);
+            res.send({
+              success: true,
+              reason: "type_exists",
+              data: results,
+            });
+          } else {
+            res.send({ success: false, reason: "Your type is err!" });
+          }
+        });
+      }
+
     insert_network_maintenance(data:any,res:any)
     {
         let str='insert into xcx_network_maintenance_table (username,truename,phonenumber,housenumber,type) values (?,?,?,?,?)';

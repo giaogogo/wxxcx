@@ -80,6 +80,11 @@ app.post('/xcxAdmin/insert_network_maintenance',(req:any,res:any)=>{
     xcxsqlcol.insert_network_maintenance(req.body,res)
 })
 
+app.post('/xcxAdmin/query_network_maintenance',(req:any,res:any)=>{
+    console.log(req.body)
+    xcxsqlcol.query_network_maintenance(req.body,res)
+})
+
 app.post('/xcxAdmin/delete_network_maintenance',(req:any,res:any)=>{
     console.log(req.body)
     if(req.body.username==null) res.send(req.body)
