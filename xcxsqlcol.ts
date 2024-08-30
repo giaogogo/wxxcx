@@ -18,6 +18,23 @@ export class XCXSQLCOL{
         return XCXSQLCOL.instance;
     }
 
+    insert_long_rent_table(data:any,res:any)
+    {
+        let str='insert into long_rent_table (username,truename,phonenumber,rent_a_bike_num,rent_a_bike_time,time) values (?,?,?,?,?,?)';
+        data.rent_a_bike_time=parseInt(data.rent_a_bike_time)
+        this.db.query(str,[data.username,data.truename,data.phonenumber,data.rent_a_bike_num,data.rent_a_bike_time,data.time],(err:any,results:any)=>{
+            if(err)
+            {
+                console.log(err)
+                res.send({success:false,reason:"insert_sql_err"});
+            }
+            else
+            {
+                res.send({success:true,reason:"",results:results})
+            }
+        })
+    }
+
     query_network_maintenance(data: any, res: any) {
         let str = "select * from xcx_network_maintenance_table where type=?";
         this.db.query(str, [data.type], (err: any, results: any) => {

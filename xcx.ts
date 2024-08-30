@@ -96,6 +96,11 @@ app.post('/xcxAdmin/delete_network_maintenance',(req:any,res:any)=>{
     xcxsqlcol.delete_network_maintenance(req.body,res)
 })
 
+app.post('/xcxAdim/insert_long_rent_table',(req:any,res:any)=>{
+    console.log(req.body)
+    xcxsqlcol.insert_long_rent_table(req.body,res)
+})
+
 io.on('connection',(socket:any)=>
 { 
     let userpolling=new XCXUSERPOLLING(socket,io)
