@@ -27,13 +27,8 @@ export class XCXBOSSPOLLING
 
         //老板发收钱消息,要发用户名username和密码password,车辆编号,结束的时间戳
         this.socket.on('return_a_bike',(data:any)=>{
-            boss_list.forEach((element:Boss) => {
-                if(element.boss_name==data.username&&element.boss_password==data.password)
-                {
-                    boss_socket.set(element.boss_name,this.socket)
-                    this.rediscol.GetRedis_return_a_bike(data.rent_a_bike_num,element.boss_name,data.endtime,this.socket)
-                }
-            });
+            boss_socket.set(data.username,this.socket)
+            this.rediscol.GetRedis_return_a_bike(data.rent_a_bike_num,data.username,data.endtime,this.socket)
         })
     }
 }

@@ -12,7 +12,7 @@ const io = require('socket.io-client');
 // }) http://127.0.0.1:4000
 
 
-const boss =io('http://119.29.174.60:4000');
+const boss =io('http://127.0.0.1:4100');
 
 boss.on('connect', () => {
     console.log('Connected to server');

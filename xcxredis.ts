@@ -105,6 +105,8 @@ export class XCXREDIS
                 let rent_a_bike_user_socket=user_socket.get(resjson.username)
                 //叫用户交钱
                 if(rent_a_bike_user_socket!=null)
+                // console.log(typeof endtime+" "+typeof resjson.rent_a_bike_time)
+                // let usetime:number=parseInt(endtime)-parseInt(resjson.rent_a_bike_time)
                 rent_a_bike_user_socket.emit('pay_money_return_a_bike',{use_a_bike_time:endtime-resjson.rent_a_bike_time,rent_a_bike_num:key,which_boss:which_boss})
                 //告诉老板骑车时间和哪一辆车
                 socket.emit('return_a_bike_message',{use_a_bike_time:endtime-resjson.rent_a_bike_time,rent_a_bike_num:key,which_boss:which_boss,the_bike_state:false})

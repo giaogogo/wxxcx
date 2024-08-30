@@ -1,5 +1,5 @@
 const ios = require('socket.io-client');
-const user =ios('http://119.29.174.60:4000');
+const user =ios('http://127.0.0.1:4100');
 
 user.on('connect',()=>{
     console.log('Connected to server')
