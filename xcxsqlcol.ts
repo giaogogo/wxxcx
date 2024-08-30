@@ -116,16 +116,31 @@ export class XCXSQLCOL{
                 fs.unlink(delPath,(err:any)=>{
                     if(err)
                     {
-                        res.send({success:false,reason:"delete_image_err"})
+                        this.add_repairman_count(data,res,"delete_image_err")
+                        // res.send({success:false,reason:"delete_image_err"})
                     }
                     else
                     {
-                        res.send({success:true,reason:""})
+                        this.add_repairman_count(data,res,"")
                     }
                 })
             }
         })
     }
 
+    add_repairman_count(data:any,res:any,error:any)
+    {
+        let str='update wxxcx.repairman_table set count=count+1 where name=?'
+        this.db.query(str,[data.repairman],(err:any,results:any)=>{
+            if(err)
+            {
+                res.send({success:false,reason:"add_repairman_count_err"+" "+error})
+            }
+            else
+            {
+                res.send({success:true,reason:error})
+            }
+        })
+    }
 
 }
