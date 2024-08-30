@@ -134,7 +134,7 @@ export class XCXSQLCOL{
         this.db.query(str,[data.repairman],(err:any,results:any)=>{
             if(err)
             {
-                res.send({success:false,reason:"add_repairman_count_err"+" "+error})
+                res.send({success:true,reason:"add_repairman_count_err"+" "+error})
             }
             else
             {
