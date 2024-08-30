@@ -149,6 +149,7 @@ export class XCXSQLCOL{
         this.db.query(str,[data.repairman,data.password],(err:any,results:any)=>{
             if(err)
             {
+                console.log(err)
                 res.send({success:false,reason:"repairman_login_err"})
             }
             else

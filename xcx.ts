@@ -70,7 +70,7 @@ app.post('/xcxApi/login',(req:any,res:any)=>{
     })
 })
 
-app.post('xcxAdmin/repairman_login',(req:any,res:any)=>{
+app.post('/xcxAdmin/repairman_login',(req:any,res:any)=>{
     console.log(req.body)
     xcxsqlcol.repairman_login(req.body,res)
 })
