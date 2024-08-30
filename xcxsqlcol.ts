@@ -143,4 +143,18 @@ export class XCXSQLCOL{
         })
     }
 
+    repairman_login(data:any,res:any)
+    {
+        let str='select * from repairman_table where name=? and password=?'
+        this.db.query(str,[data.repairman,data.password],(err:any,results:any)=>{
+            if(err)
+            {
+                res.send({success:false,reason:"repairman_login_err"})
+            }
+            else
+            {
+                res.send({success:true,reason:""})
+            }
+        })
+    }
 }

@@ -69,6 +69,12 @@ app.post('/xcxApi/login',(req:any,res:any)=>{
         token:tokenStr
     })
 })
+
+app.post('xcxAdmin/repairman_login',(req:any,res:any)=>{
+    console.log(req.body)
+    xcxsqlcol.repairman_login(req.body,res)
+})
+
 app.get('/xcxAdmin/test',(req:any,res:any)=>{
     console.log(req.auth)
     res.send(req.auth)
