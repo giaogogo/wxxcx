@@ -107,6 +107,10 @@ app.post('/xcxAdim/insert_long_rent_table',(req:any,res:any)=>{
     xcxsqlcol.insert_long_rent_table(req.body,res)
 })
 
+app.post('/xcxAdim/query_have_maintenance',(req:any,res:any)=>{
+    xcxsqlcol.query_have_maintenance(req.body,res)
+})
+
 io.on('connection',(socket:any)=>
 { 
     let userpolling=new XCXUSERPOLLING(socket,io)
